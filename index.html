@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <!-- 기존 head 내용 유지 -->
+    
+        <!-- Swiper.js CDN 추가 -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    </head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        width: 1920px;}
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .menu-item{
+            cursor: pointer;
+            display: inline-block;
+            /* border: solid 1px black; */
+            margin: 5px;
+            padding: 5px;
+        }
+        .menu-bar * {
+            
+            vertical-align: middle;
+        }
+        .menu-bar {
+            margin-top: 130px;
+            margin-left: 40px;
+            float: left;
+        }
+        span {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        input{
+            float: right;
+            margin-top: 120px;
+            margin-right: 40px;
+            width: 354px;
+            height: 55px;
+            border-radius: 30px;
+        }
+        input { font-weight: bold;}
+        #d1 ::placeholder {
+            font-weight: bold;
+        }
+        input::placeholder {
+            font-weight: bold;
+            font-size: 16px;
+            color: black;
+            
+        }
+        .box {
+            display: inline-block;
+            position: relative;
+            float: right;
+        }
+        .d1 {
+            font-size: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            background-image: url(img/돋보기.png);
+            background-repeat: no-repeat;
+            background-position: right 25px center;
+            }
+            .hr1,.h2{
+                width: 1920px;
+                height: 1px;
+                margin: 50px 0;
+            }
+            .rogobox{
+                text-align: center;
+            }
+            .rogo{
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                top: -20px;
+            }
+            .menu1box{
+                cursor: pointer;
+                margin: 20px 320px;
+            }
+            .menu1{
+                margin-right: 60px;
+                text-align: center;
+                            }
+            .menu2{margin-bottom: 25px;}
+            #imgbox{
+                cursor: pointer;
+            text-align: center;
+            position: relative;
+            /* border: solid 1px red; */
+            }
+            .swiper-container{
+                overflow: hidden;
+                width: 100%;
+                max-width: 1320px;
+                margin: auto;
+                position: relative;
+            }
+            .swiper-wrapper{
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+            .swiper-slide{display: flex;
+            box-sizing: border-box;
+        width: 100%;
+    height: auto;}
+            .BN{
+                /* border: solid 1px red; */
+                /* width: 100%; */
+                /* max-width: 1920px; */
+                /* height: 700px; */
+                display: block;
+                width: 1320px;
+                height: 527px;
+                margin: auto;
+                height: auto;
+                /* position: relative; */
+            }
+            .arrow{
+                position: absolute;
+                top: 50%;
+                width: 15px;
+                height: 30px;
+                /* transform: translate(0.3) ease-in-out; */
+                cursor: pointer;
+                /* border: solid 1px red; */
+                }
+                .left-arrow{
+                left: 310px;
+                }
+                .right-arrow{
+                right: 310px;
+                }
+                .cursor{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 20px;
+                    transform: translate(-50%,0);
+                    /* =기준선을 기준으로 50퍼센트 만큼 이동 */
+                    
+                }
+                .dot{
+                    width: 10px;
+                    height: 10px;
+                    background-color: gray;
+                    border-radius: 50%;
+                    margin: 0 5px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                .dot:hover, .dot:active{
+                    background-color: black;
+                }
+                .BNP{
+                    position: absolute;
+                    right: 61%;
+                    top: 30%;
+                }
+                .p1{
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                .p2{
+                    font-size: 10px;
+                }
+                #NEWBEST{
+                    text-align: center;
+                    /* display: inline; */
+                }
+                .NEWBEST {
+                    display: inline-block;
+                    cursor: pointer;
+                    color: gray;
+                    font-family: Arial, sans-serif;
+                    margin-top: 70px;
+                    margin-left: 50px;
+                    font-weight: bold;
+                    font-size: 50px;
+                    
+                }
+                .NEWBEST:hover, .NEWBEST:active{
+                color: black;
+                }
+                #pc{
+                    text-align: center;
+                }
+                .pd{
+                    display: inline-block;
+                    margin: 20px;
+                    text-align: left;
+                }
+                .pd img{
+                                    cursor: pointer;
+                    width: 408px;
+                    height: 356px;
+                }
+                .pd{
+                    transition: transform 0.3 ease-in-out;
+                }
+                .pd:hover{
+                    transform: scale(1.1);
+                }
+                .pd .name {
+                    margin-top: 20px;
+                    font-weight: bold;
+                }
+                .pd .tbox{
+                    display: flex;
+                    align-items: center;
+                    
+                }
+                .pd .dc{
+                    color: red;
+                    font-weight: bold;
+                    font-size: 25px;
+                }
+                .pd .pr{
+                    text-decoration: line-through;
+                    margin-left: 20px;
+                    font-weight: bold;
+                }
+                #pc1{
+                    text-align: center;
+                }
+                .pd1{
+                    display: inline-block;
+                margin: 20px;
+            text-align: left;}
+            .pd1 img {cursor: pointer; 
+                width: 408px;
+                height: 356px;
+            }
+            .pd1{transition: transform 0.3 ease-in-out;}
+            .pd1:hover{
+                transform: scale(1.1);
+            }
+            .pd1 .name1{
+                margin-top: 20px;
+                font-weight: bold;
+            }
+            .pd1 .tbox1{
+            display: flex;
+            align-items: center;
+            }
+            .pd1 .dc1{
+                color: red;
+                font-size: 25px;
+                font-weight: bold;
+            }
+            .pd1 .pr1{
+                text-decoration: line-through;
+                margin-left: 20px;
+                font-weight: bold;
+            }
+            #bn2 {
+                text-align: center;
+                position: relative;
+            }
+            #bn2 img {width: 1920px;
+            height: 542px;
+        margin-top: 60px;}
+            .moga { font-weight: bold;
+            position: absolute;
+            top: 20%;
+            left: 48%;
+            font-size: 50px;
+            font-weight: bold;
+            transform: translate(-35%,0);
+            color: white;
+        }
+        .mogatext {
+            font-weight: bold;
+            position: absolute;
+            top: 40%;
+            left: 48%;
+            color: white;
+            transform: translate(-26%,0);
+        }
+        #moga1{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* border: solid 1px red; */
+        }
+        #moga1 img{
+            /* margin-left: 300px; */
+            /* margin-top: 70px; */
+            /* border: solid 1px red; */
+
+        }
+        /* .textmo, .text3{border: solid 5px red; */
+            /* margin-left: 20px; */
+            /* display: flex; */
+        /* flex-direction: row; */
+        
+        
+        .bold{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .textbox {
+            margin-left: 30px;
+        }
+        #bn3{text-align: center;
+        position: relative;}
+        #bn3 .kw {
+            width: 1920px;
+            margin-top: 150px;
+        }
+        .kw, .kw1, .kw2, .kw3 {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .kw:hover, .kw1:hover, .kw2:hover, .kw3:hover{
+            transform: scale(1.1);
+        }
+        .kw1, .kw2, .kw3{
+            position: absolute;
+        top: 0;
+    left: 0;}
+        .kw1{margin-top: 33%;
+        margin-left: 300px;}
+        .kw2{margin-top: 33%;
+        margin-left: 750px;}
+        .kw3{margin-top: 33%;
+        margin-left: 1200px;}
+#bn4{
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#katok{
+    cursor: pointer;
+    position: fixed;
+    right: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50;
+    }
+
+    #sd { 
+        margin-left: 300px;
+        margin-top: 300px;
+        
+    }
+    .sd2{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .sd1{ font-size: 30px;
+    color: black;}
+    p{font-weight: bold;}
+    .img1 {cursor: pointer;
+        float: right;
+        margin-right: 290px;
+        margin-top: 25px;
+    }
+    .sns{margin-left: 50px;
+    margin-bottom: 10px;}
+    #bdbox{
+        width: 1920px;
+        height: 230px;
+        background-color: rgb(211, 209, 209);
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+    }
+    #bdbox img {
+        margin-left: 300px;
+    }
+    #bdbox p{
+        margin-left: 30px;
+        line-height: 1.7;
+    }
+
+    </style>
+</head>
+
+<body>
+    <ul class="menu-bar">
+        <li class="menu-item">
+        <img src="img/회원가입.png" alt="회원가입 이미지">
+        <span>회원가입 / 로그인</span>
+        </li>
+        <li class="menu-item">
+        <img src="img/장바구니.png" alt="장바구니 이미지">
+        <span>장바구니</span>
+        </li>
+        <li class="menu-item">
+        <img src="img/마이페이지.png" alt="마이페이지 이미지">
+        <span>마이페이지</span>
+        </li>
+        <li class="menu-item">
+        <img src="img/커뮤니티.png" alt="커뮤니티 이미지">
+        <span>커뮤니티</span>
+        </li>
+        <li class="menu-item">
+        <img src="img/알림.png" alt="알림 이미지">
+        <span>알림</span>
+        </li>
+    </ul>
+    <form>
+        <div class="box">
+    <input type="text" placeholder=" &nbsp;&nbsp;검색" class="d1">
+</div>
+    </form>
+    <div class="rogobox">
+    <hr class="hr1">
+    <a href="http://127.0.0.1:5500/index.html"><img class="rogo" src="/img/로고.png" alt=""></a>
+    <hr class="hr2">
+</div>
+<div class="menu1box">
+    <img class="menu1" src="/img/메뉴바.png" alt="">
+    <img class="menu1" src="/img/타이틀리스트.png" alt="">
+    <img class="menu1" src="/img/PING.png" alt="">
+    <img class="menu1" src="/img/미즈노.png" alt="">
+    <img class="menu1" src="/img/캘러웨이.png" alt="">
+    <img class="menu1" src="/img/PXG.png" alt="">
+    <img class="menu1" src="/img/말본.png" alt="">
+    <img class="menu2" src="/img/화살표.png" alt="">
+    </div>
+<div id="imgbox">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+    <img class="BN" src="img/최종 메인 배너.png" alt="">
+    <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+<div class="swiper-slide">
+    <img class="BN" src="img/슬라이드 배너1.png" alt="">
+    <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+<div class="swiper-slide">
+    <img class="BN" src="img/슬라이드 배너2.png" alt="">
+    <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+<div class="swiper-slide">
+    <img class="BN" src="img/슬라이드 배너3.png" alt="">
+    <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+
+</div>
+</div>
+    <img class="arrow left-arrow" src="/img/왼쪽 화살표.png" alt="">
+    <img class="arrow right-arrow" src="/img/오른쪽 화살표.png" alt="">
+    <div class="cursor">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="BNP">
+<p class="p1">Welcome to the 2024 Golfwear F/W Collection!</p><br>
+<p class="p2">Embrace the cool breeze of the transitional season with our trendy Golfwear</p>
+<p class="p2">Fall/Winter collection for 2024. This year, we present a blend of sophistication in</p>
+<p class="p2">design and comfort for you to shine on the golf course.</p>
+</div>
+</div>
+<div id="NEWBEST">
+<h1 class="NEWBEST">NEW</h1>
+<h1 class="NEWBEST">/</h1>
+<h1 class="NEWBEST">BEST</h1>
+</div>
+<div id="pc">
+    <div class="pd">
+        <img src="/img/타이틀 옷.png" alt="">
+        <div class="name">TITLELST <br> 타이틀리스트 패딩 남성 TJPMD4412
+        <br>발란코드[56040062]</div>
+        <div class="tbox">
+        <div class="dc">693,000원</div>
+        <div class="pr">749,000원</div>
+    </div>
+    </div>
+    <div class="pd">
+        <img src="/img/PXG 여성 옷.png" alt="">
+        <div class="name">PXG <br> 골프여성 솔리드 롱베스트
+        <br>발란코드[11346984]</div>
+        <div class="tbox">
+        <div class="dc">880,900원</div>
+        <div class="pr">976,100원</div>
+    </div>
+    </div>
+    <div class="pd">
+        <img src="/img/PASS 옷.png" alt="">
+        <div class="name">PASSARDI <br> 뒷지퍼 크롭 TP BK
+        <br>발란코드[84601134]</div>
+        <div class="tbox">
+        <div class="dc">107,000원</div>
+        <div class="pr">180,640원</div>
+    </div>
+        </div>
+        </div>
+</div>
+<div id="pc1">
+    <div class="pd1">
+    <img src="/img/테일러 옷.png" alt="">
+    <div class="name1">TAYLORMADE <br>22FW남성 사이드 지퍼 후드 구스다운 <br>발란코드[24688134]</div>
+    <div class="tbox1">
+        <div class="dc1">335,400원</div>
+        <div class="pr1">180,640원</div>
+    </div>
+</div>
+<div class="pd1">
+    <img src="/img/말본 옷.png" alt="">
+    <div class="name1">MALBON GOLF <br>말본골프폴라 플리스 하프집 티셔츠 <br>발란코드[15689787]</div>
+    <div class="tbox1">
+        <div class="dc1">230,540원</div>
+        <div class="pr1">300,500원</div>
+    </div>
+</div>    <div class="pd1">
+    <img src="/img/DUVIK.png" alt="">
+    <div class="name1">DUVIK <br>여성스판 플리츠 주름 치마 반바지<br>발란코드[00456680]</div>
+    <div class="tbox1">
+        <div class="dc1">86,330원</div>
+        <div class="pr1">110,250원</div>
+    </div>
+</div>
+</div>
+<div id="bn2">
+    <img src="img/모자 배너.png" alt="">
+    <div class="moga">2024 F/W</div>
+    <div class="mogatext">골프의 시작 PXG에서 <br>느껴보세요</div>
+</div>
+
+<div id="moga1">
+    <div>
+    <img src="img/모자 설명.png" width="670px" height="570px" alt="">
+</div>
+    <div class="textbox">
+    <div class="textmo">
+        <div class="text1">
+            2024 Golfwear이 자랑스럽게 선보이는 신상 골프 모자로 편안하고 스타일리시한<br>라운딩을 경험해보세요. 고품질 소재와 혁신적인 디자인이 만나 새로운 골프 모자 <br>트렌드를 선도합니다.
+        </div><br>
+    </div>
+    <div class="text3"> <span class="bold">편안한</span> 착용감 : 오랜 라운딩도 피곤함 없이 편안하게 착용할 수 있는 고급 소재</div><br>
+    <div class="text3"> <span class="bold">다양한</span> 컬러 : 취향에 따라 선택할 수 있는 다채로운 컬러로 스타일링 자유 자재 </div><br>
+    <div class="text3"><span class="bold">통기성</span> 좋은 디자인 : 더위와 땀을 신속히 배출하여 더욱 상쾌한 라운딩을 가능케 <br>하는 디자인 <br><br>모자를 더 즐겁게!
+    <br><br>지금 쇼핑몰에서 2024 Golfwear의 골프 모자 신상품을 만나보세요. 새로운 모자로 <br>스타일을 새롭게 정의하세요!</div>
+</div>
+</div>
+
+<div id="bn3">
+<img class="kw" src="/img/캘러웨이 가방 완성본 배너.png" alt="">
+<img class="kw1" src="img/캘러웨이 가방1.png" alt="">
+<img class="kw2" src="img/캘러웨이 가방2.png" alt="">
+<img class="kw3" src="img/캘러웨이 가방3.png" alt="">
+</div>
+
+<div id="bn4">
+    <img src="img/겨울한정 이벤트 배너.png" width="50%" height="50%" alt="">
+</div>
+<div id="katok">
+    <img src="img/카톡상담문의.png" width="50%" height="50%">
+</div>
+<div id="sd">
+    <div class="img1">
+    <p class="sns">SNS 공식 사이트</p>
+    <img src="img/인스타 로고.png" alt="">
+    <img src="img/페이스북 로고.png" alt="">
+    <img src="img/유튜브 로고.png" alt="">
+</div>
+    <p><span class="sd1">상담 및 문의</span><br><span class="sd2">02-1234-5678</span> <br>  ( 평일 : 오전 09:30 ~ 
+    12:00 / 13:00 ~ 18:30 ) </p>
+</div>
+<div id="bdbox">
+    <img src="img/로고.png" alt="">
+    <p>(주) 버디몰 대표이사 이효승 주소 : "서울특별시 강남구 가상로 123번길 45, 678호" 이메일 : "Email : info@buddymall.coom <br>
+    전화번호 : "Tel : 02-1234-5678" FAX : 070-1234-5678 사업자 등록번호 : "123-45-67890" <span>사업자 확인 바로가기</span><br>
+    개인정보보호책임자 이효승 통신판매업신고번호 제2014-서울동대문-0000호<br>
+</p>
+</div>
+<body>
+    <!-- 기존 body 내용 유지 -->
+
+    <!-- Swiper.js 스크립트 추가 -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Swiper 초기화
+        var mySwiper = new Swiper('.swiper-container', {
+            // 슬라이드 방향 설정
+            direction: 'horizontal',
+            // 자동 재생 여부
+            autoplay: {
+                delay: 3000, // 3초마다 자동으로 슬라이드 전환
+            },
+            // 슬라이드 속도 설정
+            speed: 800,
+            // 네비게이션 버튼 추가
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // 페이징 버튼 추가
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+    
+</body>
+
+</body>
+</html>
